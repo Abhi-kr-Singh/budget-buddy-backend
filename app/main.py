@@ -9,14 +9,14 @@ import app.models # Ensure all models are loaded
 from app.configs.settings import Settings
 
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    # Auto-create tables if they don't exist
-    Base.metadata.create_all(bind=engine)
-    yield
+# @asynccontextmanager
+# async def lifespan(app: FastAPI):
+#     # Auto-create tables if they don't exist
+#     Base.metadata.create_all(bind=engine)
+#     yield
 
 
-app = FastAPI(title="BudgetBuddy API", version="1.0.0", lifespan=lifespan)
+app = FastAPI(title="BudgetBuddy API", version="1.0.0")
 
 # Allowed origins that can make requests to backend.
 origins = [
